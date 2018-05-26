@@ -1,0 +1,15 @@
+<div class="entity">
+    <h2 style="text-align: center"> {{ label | uppercase }}S</h2>
+    <button id="create" class="create"><a href="/#!/{{label}}s/add"><img src="assets/img/button.png"/></a></button>
+    <label for="create">Create a new {{label }}</label>
+    <div ng-repeat="x in data">
+        <div class="card" id="{{x.id}}">
+            <img src="assets/img/{{label}}.png">
+            <div class="card-box">
+                <div class="card-text">
+                    <h3>{{ x.name || x.title }}</h3>
+                    <a href="/#!/{{label}}s/{{ x.id }}"><b>Edit</b></a></div>
+            </div>
+        </div>
+    </div>
+</div>

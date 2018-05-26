@@ -1,0 +1,45 @@
+<h1 style="text-align: center">{{ title || name }}</h1>
+<p>{{techniqueDesc}}</p>
+
+<div ng-hide="templateSelected">
+    <form ng-submit="updateTechnique(technique)">
+        <p>
+            <label for="templateBool">Would you like to use a planning technique?</label>
+            <div id="templateBool">
+                <label for="yes">Yes</label>
+                <input ng-click="showTemplateSelect = true" type="radio" name="templateBool" value="Yes" />
+
+                <label for="no">No</label>
+                <input ng-click="showTemplateSelect = false" type="radio" name="templateBool" value="No" />
+            </div>
+        </p>
+        <p>
+            <select ng-show="showTemplateSelect" ng-model="technique" id="templateSelect">
+                <option value=""></option>
+                <option value="FREESTYLE">Freestyle</option>
+                <option value="FREYTAG">FreyTag</option>
+                <option value="SNOWFLAKE">Snowflake</option>
+                <option value="SYNOPSIS">Synopsis</option>
+                <option value="THREE_ACT">Three Act Structure</option>
+                <option value="TRADITIONAL">Traditional</option>
+            </select>
+        </p>
+        <button class="create-submit" type="submit">Submit</button>
+    </form>
+</div>
+
+<div ng-show="templateSelected">
+    <div class="steps">
+        <div class="step left">
+            <div class="content">
+                <h2>Step 1</h2>
+            </div>
+        </div>
+
+        <div class="step right">
+            <div class="content">
+                <h2>Step 2</h2>
+            </div>
+        </div>
+    </div>
+</div>
